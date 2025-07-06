@@ -1,0 +1,505 @@
+/* ===== Reset and Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Color Scheme ===== */
+:root {
+    --blue: #003366;
+    --yellow: #ffcc00;
+    --white: #ffffff;
+}
+
+/* ===== Header ===== */
+.header-splash {
+  background: linear-gradient(to right, #003366, #ffdd00); /* Blue → Yellow */
+  padding: 20px 0;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+header {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--white);
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--yellow);
+    color: var(--blue);
+}
+
+nav ul li a.active {
+  background-color: #fff;
+  color: #003366;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* ===== About Section ===== */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* ===== Departments Section ===== */
+.departments {
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.departments h3 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--white);
+    color: var(--blue);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 30%;
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    background-color: var(--blue);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #001f4d;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    header .container,
+    .hero,
+    .about,
+    .departments,
+    .contact {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+}
+
+.teacher-gallery {
+  background-color: #fdfdfd;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.teacher-gallery .container h2 {
+  margin-bottom: 30px;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.teacher-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.teacher-card h4 {
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+.teacher-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+.principal-section {
+  background-color: #f0f8ff;
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.principal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.principal-card,
+.deputy-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  max-width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principal-card:hover,
+.deputy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.principal-card img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.deputy-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.principal-card h3,
+.deputy-card h4 {
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.principal-card p,
+.deputy-card p {
+  font-size: 15px;
+  color: #444;
+}
+
+.translate-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.translate-btn:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+.departments {
+  background-color: #f4faff;
+  padding: 60px 20px;
+}
+
+.departments .container h3 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.department {
+  background-color: #003366; /* Dark blue background */
+  color: #ffffff; /* White text */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #0055aa;
+}
+
+.department:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.department h4 {
+  color: #ffdd00; /* Yellow heading for contrast */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.department p {
+  color: #e6f0ff; /* Light blue text */
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.school-logo {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin: 0;
+}
+
+.map-section {
+  background-color: #f4faff;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.map-section h3 {
+  font-size: 22px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Phones (≤ 600px) */
+@media (max-width: 600px) {
+  .header-splash {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-area {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .school-logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .translate-btn {
+    margin-top: 10px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teacher-card,
+  .principal-card,
+  .deputy-card {
+    max-width: 90%;
+  }
+}
+
+/* Tablets (601px–960px) */
+@media (max-width: 960px) {
+  .card-container {
+    justify-content: center;
+  }
+
+  .teacher-card,
+  .principal-card,
+  .deputy-card {
+    flex: 1 1 45%;
+  }
+}

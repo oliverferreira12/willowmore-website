@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Willowmore Secondary School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header-splash">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <img src="images/6croKK5di.png" alt="Willowmore School Emblem" class="school-logo" />
+                <h1 class="logo" data-en="Willowmore Secondary School" data-af="Willowmore Sekondêre Skool">Willowmore Secondary School</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active" data-en="Home" data-af="Tuis">Home</a></li>
+                    <li><a href="#about" data-en="About" data-af="Oor Ons">About</a></li>
+                    <li><a href="#departments" data-en="Departments" data-af="Departemente">Departments</a></li>
+                    <li><a href="teachers.html" data-en="Teachers" data-af="Onderwysers">Teachers</a></li>
+                    <li><a href="#contact" data-en="Contact" data-af="Kontak">Contact</a></li>
+                    <button id="translateBtn" class="translate-btn">Afrikaans</button>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2 data-en="Welcome to Willowmore Secondary School" data-af="Welkom by Willowmore Sekondêre Skool">
+            Welcome to Willowmore Secondary School
+            </h2>
+
+            <p data-en="Empowering young minds through education." data-af="Bemagtig jong geeste deur onderwys.">
+             Empowering young minds through education.</p>
+            
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h3 data-en="About Our School" data-af="Oor Ons Skool">About Our School</h3>
+            <p data-en="Willowmore Secondary is a vibrant learning community where students are encouraged to excel in academics, sports, and leadership." 
+            data-af="Willowmore Sekondêr is 'n lewendige leeromgewing waar leerders aangemoedig word om uit te blink in akademie, sport en leierskap.">
+             Willowmore Secondary is a vibrant learning community where students are encouraged to excel in academics, sports, and leadership.
+            </p>
+        </div>
+    </section>
+
+    <section id="departments" class="departments">
+    <div class="container">
+      <h3 data-en="Our Departments" data-af="Ons Departemente">Our Departments</h3>
+      <div class="departments-grid">
+        <div class="department">
+          <h4 data-en="Mathematics" data-af="Wiskunde">Mathematics</h4>
+          <p data-en="Problem-solving and logical thinking through numbers." 
+             data-af="Probleemoplossing en logiese denke deur syfers.">
+            Problem-solving and logical thinking through numbers.
+          </p>
+        </div>
+        <div class="department">
+          <h4 data-en="Sciences" data-af="Wetenskappe">Sciences</h4>
+          <p data-en="Exploring biology, physics and chemistry in our labs." 
+             data-af="Ontdek biologie, fisika en chemie in ons laboratoriums.">
+            Exploring biology, physics and chemistry in our labs.
+          </p>
+        </div>
+        <div class="department">
+          <h4 data-en="Languages" data-af="Tale">Languages</h4>
+          <p data-en="Developing communication in English, Afrikaans and isiXhosa." 
+             data-af="Kommunikasie in Engels, Afrikaans en isiXhosa.">
+            Developing communication in English, Afrikaans and isiXhosa.
+          </p>
+        </div>
+        <div class="department">
+          <h4 data-en="Commerce" data-af="Kommersie">Commerce</h4>
+          <p data-en="Subjects like Accounting, Business Studies, and Economics." 
+             data-af="Vakke soos Rekeningkunde, Besigheidstudies en Ekonomie.">
+            Subjects like Accounting, Business Studies, and Economics.
+          </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3 data-en="Contact Us" data-af="Kontak Ons">Contact Us</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="school-map" class="map-section">
+        <div class="container">
+            <h3 data-en="Our Location" data-af="Ons Ligging">Our Location</h3>
+            <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps?q=-33.285833,23.492250&z=17&output=embed"
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p data-en="&copy; 2025 Willowmore Secondary School. All rights reserved." 
+         data-af="&copy; 2025 Willowmore Sekondêre Skool. Alle regte voorbehou.">
+        &copy; 2025 Willowmore Secondary School. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+    <script>
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[data-en]');
+    elements.forEach(el => {
+      el.textContent = el.dataset[lang];
+    });
+    localStorage.setItem('siteLanguage', lang);
+    document.getElementById('translateBtn').textContent = lang === 'en' ? 'Afrikaans' : 'English';
+  }
+
+  document.getElementById('translateBtn').addEventListener('click', function () {
+    const current = localStorage.getItem('siteLanguage') || 'en';
+    const newLang = current === 'en' ? 'af' : 'en';
+    setLanguage(newLang);
+  });
+
+  // On page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('siteLanguage') || 'en';
+    setLanguage(savedLang);
+  });
+</script>
+
+</body>
+</html>
